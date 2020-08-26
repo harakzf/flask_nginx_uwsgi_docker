@@ -2,13 +2,19 @@ FROM ubuntu
 USER root
 
 # 必要なものをインストール
+# RUN apt-get update && \
+#     apt-get -y install software-properties-common && \
+#     add-apt-repository -y ppa:jonathonf/python-3.6 && \
+#     apt-get update && \
+#     apt-get -y install nginx && \
+#     apt-get -y install python3.6-dev && \
+#     apt-get -y install python3-pip
+
 RUN apt-get update && \
-    apt-get -y install software-properties-common && \
-    add-apt-repository -y ppa:jonathonf/python-3.6 && \
-    apt-get update && \
     apt-get -y install nginx && \
     apt-get -y install python3.6-dev && \
     apt-get -y install python3-pip
+
 
 # PythonのPATH設定
 RUN ln -s /usr/bin/python3.6 /usr/bin/python
