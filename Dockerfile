@@ -11,6 +11,9 @@ USER root
 #     apt-get -y install python3-pip
 
 RUN apt-get update && \
+    apt-get -y install software-properties-common && \
+    add-apt-repository -y ppa:deadsnakes/ppa && \
+    apt-get update && \
     apt-get -y install nginx && \
     apt-get -y install python3.6-dev && \
     apt-get -y install python3-pip
